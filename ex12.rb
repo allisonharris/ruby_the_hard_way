@@ -10,3 +10,11 @@ number = another.to_i
 
 smaller = number / 100
 puts "A smaller number is #{smaller}."
+
+print "Give me some money: "
+money = gets.chomp.to_f
+
+change = money / 10
+puts "Your change is #{change}."
+
+
