@@ -1,34 +1,32 @@
+# getting the file we will use from the command line
 filename = ARGV.first
-
+script = $0
 puts "We're going to erase #{filename}"
 puts "If you don't want that, hit CTRL-C (^C)."
 puts "If you do want that, hit RETURN."
 
-$stdin.gets
+print "? "
+#we give it the CTRL-C or we hit RETURN
+STDIN.gets
 
 puts "Opening the file..."
+# opening a file with the write option
 target = open(filename, 'w')
 
-puts "Truncating the file. Goodbye!"
-target.truncate(0)
+puts "Truncating the file..."
+# this step erases the contents of the file
+# target.truncate(target.size)
 
 puts "Now I'm going to ask you for three lines."
 
-print "line 1: "
-line1 = $stdin.gets.chomp
-print "line 2: "
-line2 = $stdin.gets.chomp
-print "line 3: "
-line3 = $stdin.gets.chomp
+# these three steps let us enter the three lines
+print * line 1: line1 = STDIN.gets.chomp()
+print * line 2: line2 = STDIN.gets.chomp()
+print * line 3: line3 = STDIN.gets.chomp()
 
 puts "I'm going to write these to the file."
-
-target.write(line1)
-target.write("\n")
-target.write(line2)
-target.write("\n")
-target.write(line3)
-target.write("\n")
+# one target.write line instead of six
+target.write(line1 + "\n" + line2 + "\n" + line3 + "\n")
 
 puts "And finally, we close it."
-target.close
+target.close()

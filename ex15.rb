@@ -1,6 +1,9 @@
 # defines filename as the first argument variable
 filename = ARGV.first
 
+#create a prompt
+prompt = "> "
+
 # assigns txt to open a specified filename
 txt = open(filename)
 
